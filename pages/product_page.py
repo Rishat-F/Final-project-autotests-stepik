@@ -32,11 +32,11 @@ class ProductPage(BasePage):
     def is_added_to_basket_message_correct(self):
         assert self.is_added_to_basket_message_present(*ppl.ADDITION_MESSAGE),\
             "There is no message after adding product into the basket"
-        message = self.browser.find_element(*ppl.SUCCESSFULLY_ADDITION_MESSAGE)
-        basket_cost = self.browser.find_element(*ppl.BASKET_COST_MESSAGE)
-        assert message.text.strip() ==\
-            f'{self.product_title} был добавлен в вашу корзину.',\
+        product_title_in_message = self.browser.find_element(
+            *ppl.PRODUCT_TITLE_IN_MESSAGE).text.strip()
+        product_price_in_message = self.browser.find_element(
+            *ppl.PRODUCT_PRICE_IN_MESSAGE).text.strip().split(' ')[0]
+        assert product_title_in_message == self.product_title,\
             "Product name in message is different from product title!"
-        assert basket_cost.text.strip() ==\
-            f"Стоимость корзины теперь составляет {self.product_price} £",\
-            "Basket cost is different from product price!"
+        assert product_price_in_message == self.product_price,\
+            "Product price in message is different from product price!"

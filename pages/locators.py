@@ -15,7 +15,7 @@ class ProductPageLocators:
     PRODUCT_TITLE = (By.TAG_NAME, 'h1')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
     ADDITION_MESSAGE = (By.ID, 'messages')
-    SUCCESSFULLY_ADDITION_MESSAGE = (
-        By.CSS_SELECTOR, '#messages div:first-child .alertinner')
-    BASKET_COST_MESSAGE = (
-        By.CSS_SELECTOR, '#messages div:nth-child(3) p:first-child')
+    PRODUCT_TITLE_IN_MESSAGE = (
+        By.CSS_SELECTOR, '#messages div:first-child .alertinner strong')
+    PRODUCT_PRICE_IN_MESSAGE = (
+        By.CSS_SELECTOR, '#messages div:nth-child(3) p:first-child strong')
