@@ -40,3 +40,11 @@ class ProductPage(BasePage):
             "Product name in message is different from product title!"
         assert product_price_in_message == self.product_price,\
             "Product price in message is different from product price!"
+
+    def should_not_be_success_message(self):
+        assert self.is_not_element_present(*ppl.PRODUCT_TITLE_IN_MESSAGE),\
+            "Success message is presented, but should not be"
+
+    def success_message_should_disappering(self):
+        assert self.is_element_disappearing(*ppl.ADDITION_MESSAGE),\
+            "Success message is not disappering, but should"

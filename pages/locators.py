@@ -14,7 +14,8 @@ class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.CLASS_NAME, 'btn-add-to-basket')
     PRODUCT_TITLE = (By.TAG_NAME, 'h1')
     PRODUCT_PRICE = (By.CSS_SELECTOR, '.product_main .price_color')
-    ADDITION_MESSAGE = (By.ID, 'messages')
+    ADDITION_MESSAGE = (
+        By.CSS_SELECTOR, '#messages div:first-child .alertinner')
     PRODUCT_TITLE_IN_MESSAGE = (
         By.CSS_SELECTOR, '#messages div:first-child .alertinner strong')
     PRODUCT_PRICE_IN_MESSAGE = (
