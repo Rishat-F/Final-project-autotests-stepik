@@ -17,11 +17,11 @@ class LoginPage(BasePage):
             self.should_be_register_form()
         except AssertionError as err:
             collected_errors.append(str(err))
-        assert not collected_errors,
+        assert not collected_errors,\
             f"It's not login page! There next problems: {' '.join(collected_errors)}"
 
     def should_be_login_url(self):
-        assert 'bogin' in self.browser.current_url,\
+        assert 'login' in self.browser.current_url,\
             r"Page hasn't login url!"
 
     def should_be_login_form(self):
