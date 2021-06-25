@@ -15,6 +15,10 @@ class BasePage:
         self.url = url
         self.browser.implicitly_wait(timeout)
 
+    def should_be_authorized_user(self):
+        assert self.is_element_present(*bpl.USER_ICON), \
+            "User icon is not presented, probably unauthorised user"
+
     def is_element_disappearing(self, how, what, timeout=4):
         try:
             WebDriverWait(self.browser, timeout, 1, TimeoutException).\
